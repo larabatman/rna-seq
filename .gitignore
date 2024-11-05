@@ -1,2 +1,5 @@
 #Ignore the output folders created during the quality control analysis 01_QC_reads.sh
 fastQC_*
+
+#Ignore job output files
+*.out
