@@ -9,24 +9,26 @@ Case = Infected
 Control = Uninfected
 
 
-Sample	Group
-SRR7821921	Lung_WT_Case
-SRR7821922	Lung_WT_Case
-SRR7821918	Lung_WT_Case
-SRR7821919	Lung_WT_Case
-SRR7821920	Lung_WT_Case
-SRR7821937	Lung_WT_Control
-SRR7821938	Lung_WT_Control
-SRR7821939	Lung_WT_Control
-SRR7821949	Blood_WT_Case
-SRR7821950	Blood_WT_Case
-SRR7821951	Blood_WT_Case
-SRR7821952	Blood_WT_Case
-SRR7821953	Blood_WT_Case
-SRR7821968	Blood_WT_Control
-SRR7821969	Blood_WT_Control
-SRR7821970	Blood_WT_Control
+| Sample    | Group            |
+|-----------|-------------------|
+| SRR7821921 | Lung_WT_Case     |
+| SRR7821922 | Lung_WT_Case     |
+| SRR7821918 | Lung_WT_Case     |
+| SRR7821919 | Lung_WT_Case     |
+| SRR7821920 | Lung_WT_Case     |
+| SRR7821937 | Lung_WT_Control  |
+| SRR7821938 | Lung_WT_Control  |
+| SRR7821939 | Lung_WT_Control  |
+| SRR7821949 | Blood_WT_Case    |
+| SRR7821950 | Blood_WT_Case    |
+| SRR7821951 | Blood_WT_Case    |
+| SRR7821952 | Blood_WT_Case    |
+| SRR7821953 | Blood_WT_Case    |
+| SRR7821968 | Blood_WT_Control |
+| SRR7821969 | Blood_WT_Control |
+| SRR7821970 | Blood_WT_Control |
 
+<!--
 
 #Check the status of your repository
 git status
@@ -42,6 +44,7 @@ git push origin main
 
 #To save changes before pulling
 git stash
+-->
 
 #To retrieve the changes after pulling
 git stash pop
