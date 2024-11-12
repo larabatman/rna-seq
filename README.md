@@ -28,6 +28,10 @@ Control = Uninfected
 | SRR7821969 | Blood_WT_Control |
 | SRR7821970 | Blood_WT_Control |
 
+# Start the analysis: control the quality of the reads with FastQC
+
+Run script 01_QC_reads.sh
+
 <!--
 
 #Check the status of your repository
