@@ -1,7 +1,7 @@
 # Detect differentially expressed genes from bulk RNA-seq data
 Workflow of differential expression analysis on mice infected by Toxoplasma gondii
 
-# Table describing experimental groups for each sample. All samples are from wildtype (WT) mice. 
+## Table describing experimental groups for each sample. All samples are from wildtype (WT) mice. 
 Since the reads were produced in paired-end mode, there are 2 files per sample, with read 1 and read 2 respectively.
 
 Sample = ID as it is in the fastq file name
@@ -28,7 +28,7 @@ Control = Uninfected
 | SRR7821969 | Blood_WT_Control |
 | SRR7821970 | Blood_WT_Control |
 
-# Start the analysis: control the quality of the reads with FastQC
+## Start the analysis: control the quality of the reads with FastQC
 
 Run script 01_QC_reads.sh
 
