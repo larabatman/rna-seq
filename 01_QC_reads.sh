@@ -5,21 +5,18 @@
 #SBATCH --mem-per-cpu=1000M
 #SBATCH --time=01:00:00
 #SBATCH --partition=pibu_el8
-#SBATCH --array=0-2
+#SBATCH --array=0-15
 
-#change this line to the path that contains the modules for fastaQC here
+#There are 32 fasta files, each representing the forward and reverse sequences for a sample. 
+#Thus, we should run this script on 16 samples based on their IDs
 
 FASTQ_FILES=("SRR7821918" "SRR7821919" "SRR7821920" "SRR7821921" "SRR7821922" "SRR7821937" "SRR7821938" "SRR7821939" "SRR7821949" "SRR7821950" "SRR7821951" "SRR7821952" "SRR7821953" "SRR7821968" "SRR7821969" "SRR7821970")
-FASTQ_DIR="/data/courses/rnaseq_course/toxoplasma_de/reads/"
-
-
-#FASTQ_FILES=($(ls ${FASTQ_DIR}/*_1.fastq.gz | sed 's/_1\.fastq\.gz//g' ))
-#FASTQ_FILES=($(ls ${FASTQ_DIR}*_1.fastq.gz | grep -oP '(\S+)_1\.fastq\.gz'))
-
 XX="${FASTQ_FILES[$SLURM_ARRAY_TASK_ID]}"
 
+#Load the FastQC module
 module load FastQC/0.11.9-Java-11
 
+#Create a directory to store the output files and change the directory
 mkdir -p /data/users/${USER}/rna_seq/fastQC_${XX}
 cd /data/users/${USER}/rna_seq/fastQC_${XX}
 
@@ -27,4 +24,5 @@ cd /data/users/${USER}/rna_seq/fastQC_${XX}
 ln -s /data/courses/rnaseq_course/toxoplasma_de/reads/${XX}_1.fastq.gz ${XX}_1.fastq.gz
 ln -s /data/courses/rnaseq_course/toxoplasma_de/reads/${XX}_2.fastq.gz ${XX}_2.fastq.gz
 
+#Run the fastqc analysis on both reverse and forward sequences for each sample
 fastqc -t 2 ${XX}_1.fastq.gz ${XX}_2.fastq.gz
