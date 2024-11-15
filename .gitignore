@@ -2,6 +2,10 @@
 fastQC_*
 multiQC_*
 *.fastq.gz
+*.fa
+*.gtf.gz
+*.ht2
+*.sam
 
 #Ignore job output files
 *.out
