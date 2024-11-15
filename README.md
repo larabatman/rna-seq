@@ -58,8 +58,22 @@ Run script 02b_Mapping.sh
 
 The overall alignement rates of the samples to the reference genome goes from 87.90% to 98.09%. 
 
-HiSAT produces SAM files that need to be converted to BAM files.
-SAMTOOLS will be used for later analysis
+HiSAT produces SAM files that need to be converted to BAM files. SAMTOOLS view will handle the conversion:
+
+Run 02c_Convert_SAM_to_BAM.sh
+
+Then SAMTOOLS sort is used to arrange the alignements in each bam file according to their genomic position:
+
+Run 02d_Sorting_BAM.sh
+
+With the sorted bam files, we can then create indexes for quick reference to specific regions of the sorted bam files using SAMTOOLS index:
+
+Run 02e_Indexing_BAM.sh
+
+We have now produced an indexed alignement of each sample to the reference genome of Mus musculus. The alignements can be visualized using IGV by dowloading the respective bam files. 
+
+## Counting the number of reads per gene
+
 
 <!--
 

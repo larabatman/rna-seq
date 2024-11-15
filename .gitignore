@@ -6,6 +6,8 @@ multiQC_*
 *.gtf.gz
 *.ht2
 *.sam
+*.bam
+*.bai
 
 #Ignore job output files
 *.out
