@@ -79,6 +79,7 @@ Run 02f_optional_IGV.sh
 Once the BAM files have been sorted and indexed, we can finally count the numbers of reads that aligned to exons in  order to compare counts from different genes and effectively perform differential expression analysis. 
 The featureCounts tool will be used to count reads that mapped to exons. This tool needs the GTF file (unzipped) from the reference genome as well as the sorted BAM file for each sequence. As our data is paired-end and reverse stranded, we are using options -p and -s 2 to respectively account for that. FeatureCounts will produce two text files: one containing the counts for each gene, and a summary file specifying the amount of reads that were succesfully aligned and other metrics. 
 
+Run 03_Counts.sh
 <!--
 
 #Check the status of your repository
