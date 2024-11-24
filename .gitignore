@@ -8,6 +8,9 @@ multiQC_*
 *.sam
 *.bam
 *.bai
-
+*.txt
+*.txt.summary
+test*
+*.gtf
 #Ignore job output files
 *.out
