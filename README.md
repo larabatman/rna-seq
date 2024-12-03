@@ -1,7 +1,18 @@
 # Detect differentially expressed genes from bulk RNA-seq data
-Workflow of differential expression analysis on mice infected by Toxoplasma gondii
+Workflow of differential expression analysis on mice infected by Toxoplasma gondii.
+The workflow is mainly based on the RNA-seq course from the university of Bern (course code 467713), following the steps described in file:///Users/larabatman/Desktop/UNIFR/FS12024/RNA_seq/DEAnalysisWorkflow_toxoplasma.html
 
-## Table describing experimental groups for each sample. All samples are from wildtype (WT) mice. 
+
+## Table of Content
+
+0. [Samples and experimental conditions](#samples-and-experimental-conditions)
+1. [Quality Control](#quality-control)
+2. [Mapping to the reference genome](#mapping-to-the-reference-genome)
+3. [Counting the number of reads per gene](#counting-the-number-of-reads-per-gene)
+4. [Differential Expression Analysis](#differential-expression-analysis)
+
+## Samples and experimental conditions
+All samples are from wildtype  (WT) mice. 
 Since the reads were produced in paired-end mode, there are 2 files per sample, with read 1 and read 2 respectively.
 
 Sample = ID as it is in the fastq file name
@@ -28,7 +39,7 @@ Control = Uninfected
 | SRR7821969 | Blood_WT_Control |
 | SRR7821970 | Blood_WT_Control |
 
-## Start the analysis: control the quality of the reads
+## Quality Control
 
 Let's start by assessing the quality of our raw reads with FastQC.
 
