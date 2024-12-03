@@ -48,6 +48,8 @@ The first step is to download the latest available versio of the reference genom
 wget https://ftp.ensembl.org/pub/release-113/fasta/mus_musculus/dna/Mus_musculus.GRCm39.dna.primary_assembly.fa.gz
 wget https://ftp.ensembl.org/pub/release-113/gtf/mus_musculus/Mus_musculus.GRCm39.113.gtf.gz
 
+Alternatively, it is possible to run the 00_Reference_Genome.sh file that will retrieve and unzip the fasta and GTF files for Mus musculus form the Ensembl database. 
+
 HiSAT2 tools will be used for indexing of he reference genome as well as alignement of the sequenced samples to the reference genome.
 
 To build the reference genome index: 
@@ -80,6 +82,14 @@ Once the BAM files have been sorted and indexed, we can finally count the number
 The featureCounts tool will be used to count reads that mapped to exons. This tool needs the GTF file (unzipped) from the reference genome as well as the sorted BAM file for each sequence. As our data is paired-end and reverse stranded, we are using options -p and -s 2 to respectively account for that. FeatureCounts will produce two text files: one containing the counts for each gene, and a summary file specifying the amount of reads that were succesfully aligned and other metrics. 
 
 Run 03_Counts.sh
+
+Actually, featureCounts also offers the possibility to merge samples into one count table, which would be helpful here. 
+
+Run 03a_Counts_all_BAM.sh
+
+Now that the heavy computing part of the workflow is done (producing the count table from the fastq files of each sample), we can move on to the actual differential expression analysis which will be performed using the DESeq2 package in R.
+
+## Differential Expression Analysis
 <!--
 
 #Check the status of your repository
