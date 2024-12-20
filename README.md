@@ -101,6 +101,14 @@ Run 03a_Counts_all_BAM.sh
 Now that the heavy computing part of the workflow is done (producing the count table from the fastq files of each sample), we can move on to the actual differential expression analysis which will be performed using the DESeq2 package in R.
 
 ## Differential Expression Analysis
+
+After producing the count table using featureCount, we can finally move on from the cluster to our local computer and perform the differential expression analysis using the DESeq2 R package.
+For this, we will need to create a metadata text file that will contain the description of our samples (sample IDs qith theri corresponding condition (Infected or Control) and tissue type (Lung or Blood), as well as their replicate number).
+We will also need to copy the counts table from the cluster to our local machine. 
+Once we have these two files, we can run the analysis:
+
+On R, run the DESeq_pairwise_comparison.r
+
 <!--
 
 #Check the status of your repository
