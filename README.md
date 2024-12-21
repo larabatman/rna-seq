@@ -34,6 +34,7 @@ Since the reads were produced in paired-end mode, there are 2 files per sample, 
 | SRR7821968 | Blood   | Control   | 1         |
 | SRR7821969 | Blood   | Control   | 2         |
 | SRR7821970 | Blood   | Control   | 3         |
+
 Table 1: Experimental conditions and sample identifiers.
 
 ## Quality Control
