@@ -15,29 +15,26 @@ The workflow is mainly based on the RNA-seq course from the university of Bern (
 All samples are from wildtype  (WT) mice. 
 Since the reads were produced in paired-end mode, there are 2 files per sample, with read 1 and read 2 respectively.
 
-Sample = ID as it is in the fastq file name
-Case = Infected
-Control = Uninfected
 
-
-| Sample    | Group            |
-|-----------|-------------------|
-| SRR7821921 | Lung_WT_Case     |
-| SRR7821922 | Lung_WT_Case     |
-| SRR7821918 | Lung_WT_Case     |
-| SRR7821919 | Lung_WT_Case     |
-| SRR7821920 | Lung_WT_Case     |
-| SRR7821937 | Lung_WT_Control  |
-| SRR7821938 | Lung_WT_Control  |
-| SRR7821939 | Lung_WT_Control  |
-| SRR7821949 | Blood_WT_Case    |
-| SRR7821950 | Blood_WT_Case    |
-| SRR7821951 | Blood_WT_Case    |
-| SRR7821952 | Blood_WT_Case    |
-| SRR7821953 | Blood_WT_Case    |
-| SRR7821968 | Blood_WT_Control |
-| SRR7821969 | Blood_WT_Control |
-| SRR7821970 | Blood_WT_Control |
+| Sample    | Tissue  | Condition | Replicate |
+|-----------|---------|-----------|-----------|
+| SRR7821918 | Lung    | Infected  | 1         |
+| SRR7821919 | Lung    | Infected  | 2         |
+| SRR7821920 | Lung    | Infected  | 3         |
+| SRR7821921 | Lung    | Infected  | 4         |
+| SRR7821922 | Lung    | Infected  | 5         |
+| SRR7821937 | Lung    | Control   | 1         |
+| SRR7821938 | Lung    | Control   | 2         |
+| SRR7821939 | Lung    | Control   | 3         |
+| SRR7821949 | Blood   | Infected  | 1         |
+| SRR7821950 | Blood   | Infected  | 2         |
+| SRR7821951 | Blood   | Infected  | 3         |
+| SRR7821952 | Blood   | Infected  | 4         |
+| SRR7821953 | Blood   | Infected  | 5         |
+| SRR7821968 | Blood   | Control   | 1         |
+| SRR7821969 | Blood   | Control   | 2         |
+| SRR7821970 | Blood   | Control   | 3         |
+Table 1: Experimental conditions and sample identifiers.
 
 ## Quality Control
 
@@ -103,7 +100,7 @@ Now that the heavy computing part of the workflow is done (producing the count t
 ## Differential Expression Analysis
 
 After producing the count table using featureCount, we can finally move on from the cluster to our local computer and perform the differential expression analysis using the DESeq2 R package.
-For this, we will need to create a metadata text file that will contain the description of our samples (sample IDs qith theri corresponding condition (Infected or Control) and tissue type (Lung or Blood), as well as their replicate number).
+For this, we will need to create a metadata text file that will contain the description of our samples (sample IDs with theri corresponding condition (Infected or Control) and tissue type (Lung or Blood), as well as their replicate number), much like Table 1.
 We will also need to copy the counts table from the cluster to our local machine. 
 Once we have these two files, we can run the analysis:
 
