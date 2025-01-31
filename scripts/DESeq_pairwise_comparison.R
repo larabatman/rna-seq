@@ -37,7 +37,8 @@ colnames(counts) <- rownames(metadata)
 
 # Changing type of experimental conditions to factors for downstream analysis
 metadata$Treatment <- as.factor(metadata$Treatment)
-
+metadata$Condition <- as.factor(metadata$Condition)
+metadata$Tissue <- as.factor(metadata$Tissue)
 #-------- Creating a DESeq object from the counts table and the metadata -------
 
 dds <- DESeqDataSetFromMatrix(countData = counts, 
