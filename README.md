@@ -107,6 +107,13 @@ Once we have these two files, we can run the analysis:
 
 On R, run the DESeq_pairwise_comparison.r
 
+The script first imports and trims the count table to ensure that it is in the format accepted by DESeq2. Then, the metadata file is also exported. 
+The dds object is created with the DESeqDataSetFromMatrix function, which creates a data set with the count data, the metadata and a design formula that accounts for the experimental conditions. Here, we use the parameter "Condition" which descibres the state (Infected or Control) as well as the tissue (Lung or Blood).
+The DESeq function is called on the dds object, such that the differential expression analysis performed: the log2 Fold Changes are generated and their respective adjusted p-values are calculated for each gene across all samples. 
+The dds object is also used, after stabilizing its variance, for PCA analysis.
+For a given pairwise comparison, for example infected lung samples against control lung samples, a dataframe containing relevant information form the analyzed dds object is produced through the function result and the specified contrast parameters (Lung_Infected and Lung_Condition). The number of DEGs is calculated. The top 10 most upregulated and downregulated genes are then determined, and a volcano plot is produced. Genes of interest can be manually searched, and count barplots can be generated as well. 
+Finally, the over-representation of GO terms analysis produces barplots, fot plots and Excel reports for the specified comparison. 
+
 <!--
 
 #Check the status of your repository
